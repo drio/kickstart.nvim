@@ -1,6 +1,8 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+vim.o.foldmethod = 'indent'
+
 -- save
 keymap.set('n', '<c-s>', ':w!<Return>', { desc = 'save buffer' })
 -- quit
