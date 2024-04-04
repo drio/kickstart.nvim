@@ -615,6 +615,7 @@ require('lazy').setup({
         'json-lsp',
         'flake8',
         'typescript-language-server',
+        'html',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

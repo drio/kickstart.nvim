@@ -2,6 +2,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 vim.o.foldmethod = 'indent'
+vim.o.foldlevel = 99
 
 -- save
 keymap.set('n', '<c-s>', ':w!<Return>', { desc = 'save buffer' })
