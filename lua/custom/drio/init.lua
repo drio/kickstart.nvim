@@ -3,6 +3,7 @@ local opts = { noremap = true, silent = true }
 
 vim.o.foldmethod = 'indent'
 vim.o.foldlevel = 99
+vim.o.tabstop = 4
 
 -- save
 keymap.set('n', '<c-s>', ':w!<Return>', { desc = 'save buffer' })
