@@ -22,10 +22,16 @@ keymap.set('n', '<space><space>', '<c-^>', { desc = 'Prev buffer' })
 
 -- toggle neotree
 -- https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/doc/neo-tree.txt
-keymap.set('n', '<space>nt', ':Neotree toggle reveal_force_cwd<cr>', { desc = 'Toggle NeoTree' })
+keymap.set('n', '<space>nt', ':Neotree toggle <cr>', { desc = 'Toggle NeoTree' })
 
 -- setup mapping to call :LazyGit
 keymap.set('n', '<space>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
+
+-- tabs
+keymap.set('n', '<space>1', '1gt', { desc = 'Go to tab 1' })
+keymap.set('n', '<space>2', '2gt', { desc = 'Go to tab 2' })
+keymap.set('n', '<space>3', '3gt', { desc = 'Go to tab 3' })
+keymap.set('n', '<space>0', ':tablast<cr>', { desc = 'Go to previous tab' })
 
 -- load ai
 -- keymap.set({ 'n', 'v' }, '<space>i', ':Gen<Return>')
