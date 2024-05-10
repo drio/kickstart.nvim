@@ -7,6 +7,8 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   keys = {
+    { '<Tab>', '<Cmd>BufferLineCycleNext<CR>', desc = 'Next tab' },
+    { '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Prev tab' },
     -- { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle pin' },
     -- { '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete non-pinned buffers' },
     -- { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = 'Delete other buffers' },

@@ -10,7 +10,7 @@ keymap.set('n', '<c-s>', ':w!<Return>', { desc = 'save buffer' })
 -- quit
 keymap.set('n', '<space>q', ':q!<Return>', { desc = 'quit' })
 
-keymap.set('n', '<space>d', ":pu=strftime('%Y-%m-%d')<Return>")
+--keymap.set('n', '<space>d', ":pu=strftime('%Y-%m-%d')<Return>")
 
 -- Split window
 keymap.set('n', 'sh', ':split<Return>', opts)
@@ -31,6 +31,8 @@ keymap.set('n', '<space>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
 keymap.set('n', '<space>1', '1gt', { desc = 'Go to tab 1' })
 keymap.set('n', '<space>2', '2gt', { desc = 'Go to tab 2' })
 keymap.set('n', '<space>3', '3gt', { desc = 'Go to tab 3' })
+keymap.set('n', '<space>4', '4gt', { desc = 'Go to tab 4' })
+keymap.set('n', '<space>5', '5gt', { desc = 'Go to tab 5' })
 keymap.set('n', '<space>0', ':tablast<cr>', { desc = 'Go to previous tab' })
 
 -- Auto update packages
