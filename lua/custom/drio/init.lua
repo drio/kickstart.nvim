@@ -38,6 +38,7 @@ local function augroup(name)
   return vim.api.nvim_create_augroup('lazyvim_' .. name, { clear = true })
 end
 
+-- TODO: allow running this headless (see mason updates)
 vim.api.nvim_create_autocmd('VimEnter', {
   group = augroup 'autoupdate',
   callback = function()
