@@ -48,6 +48,8 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 
+vim.opt.termguicolors = true
+
 -- Mason Updates
 -- nvim --headless -c "autocmd User MasonUpgradeComplete sleep 100m | qall" -c 'MasonUpgrade'
 vim.api.nvim_create_user_command('MasonUpgrade', function()
