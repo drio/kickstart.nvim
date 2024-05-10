@@ -33,5 +33,31 @@ keymap.set('n', '<space>2', '2gt', { desc = 'Go to tab 2' })
 keymap.set('n', '<space>3', '3gt', { desc = 'Go to tab 3' })
 keymap.set('n', '<space>0', ':tablast<cr>', { desc = 'Go to previous tab' })
 
--- load ai
--- keymap.set({ 'n', 'v' }, '<space>i', ':Gen<Return>')
+-- Auto update packages
+local function augroup(name)
+  return vim.api.nvim_create_augroup('lazyvim_' .. name, { clear = true })
+end
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = augroup 'autoupdate',
+  callback = function()
+    if require('lazy.status').has_updates then
+      require('lazy').update { show = false }
+    end
+  end,
+})
+
+-- Mason Updates
+-- nvim --headless -c "autocmd User MasonUpgradeComplete sleep 100m | qall" -c 'MasonUpgrade'
+vim.api.nvim_create_user_command('MasonUpgrade', function()
+  local registry = require 'mason-registry'
+  registry.refresh()
+  registry.update()
+  local packages = registry.get_all_packages()
+  for _, pkg in ipairs(packages) do
+    if pkg:is_installed() then
+      pkg:install()
+    end
+  end
+  vim.cmd 'doautocmd User MasonUpgradeComplete'
+end, { force = true })
