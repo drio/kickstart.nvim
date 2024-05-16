@@ -5,5 +5,8 @@ rebase:
 	#git pull --rebase upstream master && git rebase upstream/master
 	git pull --rebase upstream master
 
-rsync:
+deploy:
 	rsync -a * --progress --exclude=.git ~drio/.config/nvim/
+
+clean/share:
+	rm -rf ~/.local/share/nvim
